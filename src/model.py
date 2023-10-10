@@ -12,6 +12,13 @@ class Sort:
         Constructor taking the list to sort.
         """
         self.array = array
+        self.current_index = 0  # The value to be used when viewing the changes in view.
+
+    def get_current_index(self):
+        """
+        Returns current index.
+        """
+        return self.current_index
 
     def is_sorted(self):
         """
@@ -63,6 +70,7 @@ class BubbleSort(Sort):
             self.already_sorted = False
 
         self.j += 1
+        self.current_index = self.j
 
         if self.j >= len(self.array) - self.i - 1:
             if self.i >= len(self.array) - 1 or self.already_sorted:

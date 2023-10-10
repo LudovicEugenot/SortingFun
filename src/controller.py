@@ -15,14 +15,14 @@ class Controller:
         """
         Constructor taking in the model and view modules
         """
-        self.model = model.BubbleSort([1, 30, 10, 5, 2 * 3])
-        self.view = view.ConsoleView('▀', '▄')
+        self.view = view.ConsoleView('▄', '▀')
 
     def run(self):
         """
         Function that runs the program
         """
-        while not self.model.is_sorted():
-            self.view.display(self.model.array)
-            time.sleep(1)
-            self.model.next_step()
+        sorting = model.BubbleSort(self.view.ask_input())
+        while not sorting.is_sorted():
+            self.view.display(sorting.array)
+            time.sleep(0.5)
+            sorting.next_step()
