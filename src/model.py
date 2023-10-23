@@ -20,6 +20,26 @@ class Sort:
         """
         return self.current_index
 
+    def get_lowest_value(self):
+        """
+        Returns the minimum value
+        """
+        lowest = self.array[0]
+        for i in self.array:
+            if i < lowest:
+                lowest = i
+        return lowest
+
+    def get_highest_value(self):
+        """
+        Returns the maximum value
+        """
+        highest = self.array[0]
+        for i in self.array:
+            if i > highest:
+                highest = i
+        return highest
+
     def is_sorted(self):
         """
         Virtual method to be implemented in child.
